@@ -1,0 +1,709 @@
+//header styling
+.header__OuterWrapper {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 67px;
+
+    .header__wrapper1 {
+        width: 100%;
+        border-bottom: 1px solid rgb(236, 239, 241);
+        top: 0px;
+        background: $white;
+
+        .header__Innerwrapper {
+            position: relative;
+
+            .header__MainWrapper {
+                @include flex;
+                max-width: 1180px;
+                margin: 0 auto;
+                align-items: stretch;
+                padding: 0 20px;
+                box-sizing: content-box;
+                min-height: 66px;
+
+                .logo__wrapper {
+                    padding-bottom: 3px;
+                    display: flex;
+                    align-items: center;
+                    flex: 2 1 0%;
+                }
+
+                .nav__Wrapper {
+                    @include flex;
+                    flex: 6 1 0%;
+                    justify-content: center;
+
+                    .nav__linkItems {
+                        line-height: 15px;
+                        height: 100%;
+                        display: inline-flex;
+                        text-decoration: none;
+                        cursor: pointer;
+                        position: relative;
+                        font-family: CoinbaseSans,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+
+                        .nav__linkItems1 {
+                            margin: 0px 18px;
+                            display: inline-flex;
+                            align-items: center;
+                            cursor: pointer;
+                            border-bottom: 4.7px solid transparent;
+
+                            &:hover {
+                                border-bottom: 4.7px solid $primary-color;
+                            }
+
+                            .nav__linkItems-span {
+                                margin: 0;
+                                font-size: 14px;
+                                font-family: CoinbaseSans,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+                                font-weight: 600;
+                                line-height: 16px;
+                                color: $black;
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    @include header {
+                        display: none;
+                    }
+                }
+                .button__wrapper {
+                    @include flex;
+                    padding: 0 16px;
+                    flex: 2 1 0%;
+                    justify-content: flex-end;
+
+                    .button__wrapper-link {
+                        cursor: pointer;
+                        text-decoration: none;
+                    }
+
+                    .sign--in {
+                        background: $white;
+
+                        .button__wrapper-Sign-in-span {
+                            font-size: 14px;
+                            font-family: CoinbaseSans,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+                            font-weight: 600;
+                            line-height: 16px;
+                            color: $black;
+                            display: flex;
+                            flex: 2 1 0%;
+                            padding: 16px;
+                            justify-content: flex-end;
+                            height: 100%;
+                            transition: color .15s ease-out, opacity .15s ease-out;
+
+                            &:hover {
+                                color: $primary-color;
+                            }
+                        }
+
+                        @include header {
+                            display: none;
+                        }
+                    }
+
+                    .get-started {
+                        background: $primary-color;
+                        border: 1px solid $primary-color;
+                        cursor: pointer;
+                        border-radius: 4px;
+                        transition: color .15s ease-out, opacity .15s ease-out;
+
+                        &:hover {
+                            background: $primary-color-hover;
+                        }
+
+                        .button__wrapper-get-started-span {
+                            font-size: 14px;
+                            font-family: CoinbaseSans,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+                            font-weight: 600;
+                            line-height: 16px;
+                            color: $black;
+                            display: flex;
+                            flex: 2 1 0%;
+                            padding: 10px 12px;
+                            justify-content: flex-end;
+                            height: 100%;
+                            color: $white;
+                            position: relative;
+                            width: auto;
+                        }
+                    }
+                }
+
+                .mobile-menu__toggle {
+                    padding: 10px;
+                    margin: 14px -10px 10px 20px;
+                    display: none;
+
+                    .toggle__container {
+                        position: relative;
+                        width: 18px;
+                        height: 17px;
+                        cursor: pointer;
+
+                        .toggle__line {
+                            position: absolute;
+                            top: 8px;
+                            width: 100%;
+                            height: 2px;
+                            background-color: $black;
+                            border-radius: 4px;
+                            transform: initial;
+                            transition: transform 300ms ease 0s, background-color 0s cubic-bezier(0.6, 0.15,1) 0s;
+                        }
+                    }
+
+                    @include header {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.toggle__line::before {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $black;
+    border-radius: 4px;
+    content: "";
+    transform: translateY(-8px);
+    transition: transform 300ms ease 0s, background-color 0s cubic-bezier(0.6, 0.15,1) 0s
+}
+
+.toggle__line::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $black;
+    border-radius: 4px;
+    content: "";
+    transform: translateY(8px) rotate(0deg);
+    transition: transform 300ms ease 0s, background-color 0s cubic-bezier(0.6, 0.15,1) 0s
+}
+
+// dropdown hover display
+.learn--link:hover + .dropdown__wrapper {
+    visibility: visible;
+    opacity: 1;
+}
+
+.individual--link:hover + .individual--dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+.business--link:hover + .business--dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+.developers--link:hover + .developers--dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+.company--link:hover + .company--dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+// header dropdown styling
+.dropdown__wrapper {
+    background: $white;
+    padding: 40px 45px;
+    visibility: hidden;
+    cursor: pointer;;
+    opacity: 0;
+    text-align: left;
+    position: absolute;
+    z-index: 9;
+    left: 0px;
+    top: calc(100% + 1px);
+    width: 100%;
+    border-bottom: 1px solid rgb(236, 239, 241);
+    
+
+    .dropdown__InnerWrapper {
+        @include flex;
+        max-width: 1065px;
+        margin: 0 auto;
+        justify-content: center;
+
+        .dropdown__flexWrapper {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+
+            .column__wrapper {
+                @include flex;
+
+                .column__wrapperContents {
+                    @include flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                    margin-right: 60px;
+                    align-items: flex-start;
+
+                    .column__wrapperContentsLinks {
+                        @include flex;
+                        gap: 1.5rem;
+                        text-decoration: none;
+
+                        .column__wrapperContentLinks-span {
+                            font-size: 16px;
+                            font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                            color: $black;
+                            font-weight: 600;
+                            line-height: 1rem;
+                        }
+                    }
+                }
+
+                .dropdown__description {
+                    height: inherit;
+                    max-width: 320px;
+
+                    .dropdown__descriptionHeading {
+                        font-size: 1.2rem;
+                        font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                        color: $black;
+                        font-weight: 600;
+                        line-height: 16px;
+                    }
+
+                    .dropdown__descriptionParagraph {
+                        margin: 8px 0px 0px;
+                        font-size: 1.2rem;
+                        line-height: 24px;
+                        font-weight: 100;
+                        font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                        color: $black;
+                    }
+
+                    .dropdown__descriptionLink {
+                        text-decoration: none;
+                        display: inline-block;
+                        cursor: pointer;
+                        font-family:  CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                        margin-top: 22px;
+                        color: $primary-color;
+                        font-size: 16px;
+                        
+                        &:hover {
+                            color: rgb(22 82 240 / 80%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dropdown__FlexWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .dropdown__grid {
+        flex: 0 1 0;
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        gap: 20px 34px;
+        grid-auto-flow: row;
+        justify-content: end;
+        margin-right: 60px;
+        align-items: flex-start;
+    
+        .dropdown__grid-limk {
+            display: inline-flex;
+            color: inherit;
+            min-width: 145px;
+            text-decoration: none;
+            cursor: pointer;
+            font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            background-color: rgb(0 0 0 / 0%);
+    
+            .dropdown__grid-ImageWrapper {
+                margin-right: 12px;
+                display: inline-flex;
+                align-items: center;
+    
+                .dropdown__icons {
+                    filter: drop-shadow(rgba(91, 97, 110, 0.14) 0px 2px 2px) drop-shadow(rgba(91, 97, 110, 0.12) 0px 3px 1px) drop-shadow(rgba(91, 97, 110, 0.2) 0px 1px 5px);
+                }
+            }
+    
+            .dropdown__textWrapper {
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 316px;
+    
+                .dropdown-grid__header {
+                    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                    font-size: 16px;
+                    color: $black;
+                    font-weight: 600;
+                    line-height: 16px;
+                }
+    
+                .dropdown-grid__paragraph {
+                    margin: 4px 0px 0px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                    display: inline-block;
+                    color: rgb(17 51 83 / 60%);
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+.dropdown-grid__description {
+    flex: 1 1 0%;
+    max-width: 320px;
+
+    .dropdown-grid__descriptionHeading {
+        font-size: 16px;
+        font-family:  CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        color: $black;
+        font-weight: 600;
+        line-height: 16px;
+    }
+
+    .dropdown-grid__descriptionParagraph {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 300;
+        font-family:  CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        color: $black;
+    }
+
+    .dropdown-grid__descriptionLink {
+        display: inline-flex;
+        margin-top: 22px;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        color: rgb(0, 82, 255);
+
+        .dropdown-grid__descritionLink-headline {
+            font-size: 16px;
+            font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            font-weight: 500;
+            line-height: 16px;
+            color: rgb(0, 82, 255);
+        }
+    }
+}
+
+.footer__section {
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 100px 24px 60px;
+    color: $white;
+
+    .footer__container {
+        width: 100%;
+
+        .footer__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            width: 100%;
+            background: $white;
+            color: $white;
+
+            .footer__left-section {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 32px;
+
+                .footer__left-section-InnerWrapper {
+                    max-width: 200px;
+
+                    .coinbase__footer-logo {
+                        display: block;
+                        margin-bottom: 32px;
+                        height: 20px;
+                        width: 112px;
+                    }
+
+                    .Language__selector {
+                        padding: 4px;
+                        border-radius: 4px;
+                        background-color: $white;
+                        border: 1px solid rgb(238,240,243);
+                        text-transform: none;
+                        font-family: inherit;
+                        font-size: 100%;
+                        line-height: 1.15;
+                        margin-right: 16px;
+
+                        &:hover {
+                            cursor: pointer;
+                            border-color: $primary-color;
+                        }
+                    }
+
+                    .brand__InfoColumn {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 20px;
+
+                        .brand__infoCopyright {
+                            font-size: 16px;
+                            color: rgb(17,51,85);
+                            line-height: 1.3;
+                            opacity: 0.7;
+                            text-decoration: none;
+                            max-width: 200px;
+                            margin-top: 0px;
+                            margin-bottom: 8px;
+                        }
+
+                        .social__media {
+                            display: flex;
+                            flex-direction: row;
+                            text-align: center;
+
+                            .social__media-link {
+                                font-size: 16px;
+                                line-height: 1.3;
+                                opacity: 0.7;
+                                color: rgb(17,51,85);
+                                text-decoration: none;
+                                max-width: 200px;
+                                cursor: pointer;
+                                transition: color 0.25s ease 0s;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: $primary-color-hover;
+                                }
+                            }
+
+                            .social__media-link-span {
+                                margin: 0 3px;
+                                color: $gray60;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer__column-links {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+
+                .column__one {
+                    padding-bottom: 24px;
+                    flex-direction: column;
+                    display: flex;
+
+                    .column__one-flexWrapper {
+                        padding: 0 4px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .column__oneHeader {
+                            text-align: start;
+                            color: $secondary-gray;
+                            font-size: 16px;
+                            line-height: 24px;
+                            font-weight: 600;
+                        }
+
+                        .empty__span {
+                            flex-grow: 0;
+                            flex-shrink: 0;
+                            height: 8px;
+                        }
+
+                        .column__one-linkWrapper {
+                            flex-direction: column;
+                            display: flex;
+                            list-style-type: none;
+                            margin-top: calc(-1*(0px));
+                            margin-bottom: calc(-1*(0px));
+
+                            .colum__one-list {
+                                display: flex;
+                                margin-bottom: 8px;
+
+                                .column__one-link {
+                                    cursor: pointer;
+                                    background: 0 0;
+                                    text-decoration: none;
+
+                                    .column__one-span {
+                                        text-align: start;
+                                        color: $gray60;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        font-weight: 400;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .empty__span {
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                        height: 24px;
+                    }
+                }
+
+                .column__two {
+                    padding-bottom: 24px;
+                    flex-direction: column;
+                    display: flex;
+
+                    .column__two-flexWrapper {
+                        padding: 0 4px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .column__twoHeader {
+                            text-align: start;
+                            color: $secondary-gray;
+                            font-size: 16px;
+                            line-height: 24px;
+                            font-weight: 600;
+                        }
+
+                        .empty__span {
+                            flex-grow: 0;
+                            flex-shrink: 0;
+                            height: 8px;
+                        }
+
+                        .column__two-linkWrapper {
+                            flex-direction: column;
+                            display: flex;
+                            list-style-type: none;
+                            margin-top: calc(-1*(0px));
+                            margin-bottom: calc(-1*(0px));
+
+                            .column__two-list {
+                                display: flex;
+                                margin-bottom: 8px;
+
+                                .column__two-link {
+                                    cursor: pointer;
+                                    background: 0 0;
+                                    text-decoration: none;
+
+                                    .column__two-span {
+                                        text-align: start;
+                                        color: $gray60;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        font-weight: 400;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .empty__span {
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                        height: 24px;
+                    }
+                }
+
+                .column__three {
+                    padding-bottom: 24px;
+                    flex-direction: column;
+                    display: flex;
+
+                    .column__three-flexWrapper {
+                        padding: 0 4px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .column__threeHeader {
+                            text-align: start;
+                            color: $secondary-gray;
+                            font-size: 16px;
+                            line-height: 24px;
+                            font-weight: 600;
+                        }
+
+                        .empty__span {
+                            flex-grow: 0;
+                            flex-shrink: 0;
+                            height: 8px;
+                        }
+
+                        .column__three-linkWrapper {
+                            flex-direction: column;
+                            display: flex;
+                            list-style-type: none;
+                            margin-top: calc(-1*(0px));
+                            margin-bottom: calc(-1*(0px));
+
+                            .column__three-list {
+                                display: flex;
+                                margin-bottom: 8px;
+
+                                .column__three-link {
+                                    cursor: pointer;
+                                    background: 0 0;
+                                    text-decoration: none;
+
+                                    .column__three-span {
+                                        text-align: start;
+                                        color: $gray60;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        font-weight: 400;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .empty__span {
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                        height: 24px;
+                    }
+                }
+
+                @include tablet {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @include mobile {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+
+            @include tablet {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

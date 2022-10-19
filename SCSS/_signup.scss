@@ -1,0 +1,696 @@
+body {
+    background-color: $white;
+    height: 100%;
+    font-family: CoinbaseSans,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    min-height: -webkit-fill-available;
+}
+
+.container-FlexColumn {
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        border: 1px solid rgba(91,97,110,0.2);
+        padding: 16px 32px 16px 24px;
+
+        .logo__link {
+            cursor: pointer;
+        }
+
+        .signin__link {
+            cursor: pointer;
+            background: 0 0;
+            text-decoration: none;
+
+            .sign-in__span {
+                text-align: start;
+                color: $secondary-gray;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .span__height {
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 72px;
+        @include signup-column {
+            height: 8px;
+        }
+    }
+
+    .content__OuterWrapper {
+        display: flex;
+        padding: 0px 64px;
+        justify-content: center;
+
+        .content__InnerWrapper {
+            max-width: 1200px;
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row;
+            display: flex;
+            @include signup-column {
+                flex-direction: column-reverse;
+                max-width: 520px;
+                padding-right: 24px;
+                padding-left: 24px;
+                padding-bottom: 16px;
+
+            }
+
+            .form__OuterWrapper {
+                width: 100%;
+                justify-content: center;
+                flex-direction: row;
+                align-self: center;
+                display: flex;
+
+                .home__arrow {
+                    text-decoration: none;
+                    border-radius: 100px;
+                    background-color: rgb(238,240,243);
+                    display: block;
+                    opacity: 0.92;
+                    width: 40px;
+                    height: 40px;
+                    position: relative;
+                    border: 1px solid rgb(0 0 0 / 0%);
+                    transform: scale(1);
+                    @include arrow-none {
+                        display: none;
+                    }
+
+                    &:hover {
+                        background-color: rgb(233, 235, 238);
+                    }
+
+                    .arrow__wrapper {
+                        display: flex;
+                        justify-content: center;
+                        opacity: 1;
+                        height: 100%;
+                        align-items: center;
+                        
+                        .arrow {
+                            font-size: 16px;
+                            color: $secondary-gray;
+                            font-variant: normal;
+                            text-rendering: auto;
+                            flex-shrink: 0;
+                            font-family: CoinbaseIcons;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 1;
+                            text-decoration: none;
+                            display: block;
+                        }
+                    }
+                }
+
+                .form__span {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    width: 40px;
+                    @include arrow-none {
+                        display: none;
+                    }
+                }
+
+                .form__wrapper {
+                    max-width: 448px;
+                    padding-bottom: 24px;
+                    flex-direction: column;
+                    display: flex;
+
+                    .form__headerWrapper {
+                        width: 100%;
+                        justify-content: center;
+                        flex-direction: column;
+                        display: flex;
+                        align-self: center;
+
+                        .header__wrapper {
+                            max-width: 448px;
+                            display: flex;
+                            @include signup-column {
+                                display: none;
+                            }
+
+                            .form__header {
+                                white-space: nowrap;
+                                text-align: start;
+                                padding-bottom: 16px;
+                                color: $secondary-gray;
+                                font-size: 40px;
+                                line-height: 48px;
+                                font-weight: 400;
+                            }
+                        }
+
+                        .instructions {
+                            text-align: start;
+                            padding-bottom: 8px;
+                            padding-top: 8px;
+                            color: $secondary-gray;
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-weight: 400;
+                        }
+                    }
+
+                    .signup__form {
+                        width: 100%;
+                        align-self: center;
+                        justify-content: center;
+
+                        .form__flexWrapper {
+                            display: flex;
+                            flex-direction: column;
+
+                            .name__wrapper {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                align-items: stretch;
+                                padding-bottom: 16px;
+                                @include signup-column {
+                                    flex-direction: column;
+                                }
+
+                                .content__display {
+                                    display: contents;
+                                }
+
+                                .first-name__OuterWrapper {
+                                    width: 50%;
+                                    padding-right: 8px;
+                                    display: flex;
+                                    @include signup-column {
+                                        width: 100%;
+                                        padding-right: 0;
+                                        margin-bottom: 14px;
+                                    }
+
+                                    .first-name__InnerWrapper {
+                                        width: 100%;
+                                        opacity: 1;
+                                        flex-direction: column;
+                                        display: flex;
+
+                                        .first-name__label {
+                                            display: block;
+                                            text-align: start;
+                                            color: $secondary-gray;
+                                            font-size: 14px;
+                                            line-height: 20px;
+                                            font-weight: 500;
+                                            margin-bottom: 9px;
+                                        }
+
+                                        .first-name__Input-OuterWrapper {
+                                            display: flex;
+                                            flex-direction: row;
+
+                                            .first-name__Input-InnerWrapper {
+                                                width: 100%;
+                                                padding: 1px;
+
+                                                .first-name__span {
+                                                    background-color: $white;
+                                                    display: block;
+
+                                                    .first-name__input {
+                                                        border: 1px solid rgba(91, 97, 110, 0.66);
+                                                        border-radius: 8px;
+                                                        text-align: start;
+                                                        padding: 16px;
+                                                        width: 100%;
+                                                        font-size: 16px;
+                                                        line-height: 24px;
+                                                        font-weight: 400;
+                                                        color: $secondary-gray;
+                                                        outline-color: $primary-color;
+
+                                                        &:hover {
+                                                            background-color: rgb(250 250 250);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .last-name__OuterWrapper {
+                                    width: inherit;
+                                    padding-left: 8px;
+                                    display: flex;
+                                    @include signup-column {
+                                        padding-left: 0;
+                                    }
+
+                                    .last-name__InnerWrapper {
+                                        width: 100%;
+                                        opacity: 1;
+                                        flex-direction: column;
+                                        display: flex;
+
+                                        .last-name__label {
+                                            display: block;
+                                            text-align: start;
+                                            color: $secondary-gray;
+                                            font-size: 14px;
+                                            line-height: 20px;
+                                            font-weight: 500;
+                                            margin-bottom: 9px;
+                                        }
+
+                                        .last-name__Input-OuterWrapper {
+                                            display: flex;
+                                            flex-direction: row;
+
+                                            .last-name__Input-InnerWrapper {
+                                                width: 100%;
+                                                padding: 1px;
+
+                                                .last-name__span {
+                                                    background-color: $white;
+                                                    display: block;
+
+                                                    .last-name__input {
+                                                        border: 1px solid rgba(91,97,110,0.66);
+                                                        border-radius: 8px;
+                                                        text-align: start;
+                                                        padding: 16px;
+                                                        font-size: 16px;
+                                                        line-height: 24px;
+                                                        font-weight: 400;
+                                                        color: $secondary-gray;
+                                                        width: 100%;
+                                                        outline-color: $primary-color;
+
+                                                        &:hover {
+                                                            background-color: rgb(250 250 250);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .email__OuterWrapper {
+                                display: flex;
+                                padding-bottom: 16px;
+                                margin-bottom: 4px;
+
+                                .email__InnerWrapper {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    opacity: 1;
+
+                                    .email__label {
+                                        display: block;
+                                        text-align: start;
+                                        margin-bottom: 9px;
+                                        color: $secondary-gray;
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                        font-weight: 500;
+                                    }
+
+                                    .input__OuterWrapper {
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        .input__InnerWrapper {
+                                            width: 100%;
+                                            padding: 1px;
+
+                                            .input__span {
+                                                background-color: $white;
+                                                display: flex;
+                                                flex-grow: 2;
+                                                overflow: hidden;
+
+                                                .email__input {
+                                                    text-align: start;
+                                                    padding: 16px;
+                                                    font-size: 16px;
+                                                    line-height: 24px;
+                                                    font-weight: 400;
+                                                    width: 100%;
+                                                    border: 1px solid rgba(91,97,110,0.66);
+                                                    border-radius: 8px;
+                                                    outline-color: $primary-color;
+
+                                                    &:hover {
+                                                        background-color: rgb(250 250 250);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .password__OuterWrapper {
+                                display: flex;
+                                padding-bottom: 16px;
+                                margin-bottom: 4px;
+
+                                .password__InnerWrapper {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    opacity: 1;
+
+                                    .password__label {
+                                        display: block;
+                                        text-align: start;
+                                        margin-bottom: 9px;
+                                        color: $secondary-gray;
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                        font-weight: 500;
+                                    }
+
+                                    .password-input__OuterWrapper {
+                                        display: flex;
+                                        flex-direction: row;
+
+                                        .password-input__InnerWrapper {
+                                            width: 100%;
+                                            padding: 1px;
+
+                                            .password-input__span {
+                                                border: 1px solid rgba(91,97,110,0.66);
+                                                border-radius: 8px;
+                                                background-color: $white;
+                                                display: flex;
+                                                align-items: center;
+                                                flex-grow: 2;
+                                                overflow: hidden;
+
+                                                &:hover {
+                                                    background-color: rgb(250 250 250);
+                                                }
+
+                                                .password__input {
+                                                    text-align: start;
+                                                    padding: 16px;
+                                                    font-size: 16px;
+                                                    line-height: 24px;
+                                                    font-weight: 400;
+                                                    width: 100%;
+                                                    outline: 0;
+
+                                                    &:hover {
+                                                        background-color: rgb(250 250 250);
+                                                    }
+                                                }
+
+                                                .password__iconContainer {
+                                                    display: flex;
+                                                    opacity: 0.92;
+                                                    justify-content: center;
+                                                    flex-direction: row;
+                                                    align-items: center;
+                                                    padding: 10px;
+
+                                                    .password__iconWrapper {
+                                                        display: flex;
+                                                        padding-right: 4px;
+                                                        padding-left: 8px;
+
+                                                        .password__button {
+                                                            height: 40px;
+                                                            border-radius: 100px;
+                                                            background: rgb(0 0 0 / 0%);
+                                                            position: relative;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                            display: flex;
+                                                            border: 1px solid rgb(0 0 0 / 0%);
+                                                            cursor: pointer;
+                                                            transform: scale(1);
+
+                                                            .icon__outerWrapper {
+                                                                position: relative;
+                                                                display: flex;
+                                                                height: 40px;
+                                                                border-radius: 100px;
+                                                                background: rgb(0 0 0 / 0%);
+
+                                                                .icon__innerWrapper {
+                                                                    width: 16px;
+                                                                    height: 100%;
+                                                                    align-items: center;
+                                                                    display: flex;
+                                                                    justify-content: center;
+
+                                                                    .password__iconSpan {
+                                                                        color: $gray60;
+                                                                        font-size: 16px;
+                                                                        font-variant: normal;
+                                                                        text-rendering: auto;
+                                                                        flex-shrink: 0;
+                                                                        font-family: CoinbaseIcons;
+                                                                        font-style: normal;
+                                                                        font-weight: 400;
+                                                                        line-height: 1;
+                                                                        text-decoration: none;
+                                                                        display: block;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .agreement__wrapper {
+                                padding-bottom: 16px;
+                                flex-direction: row;
+                                display: flex;
+
+                                .checkbox__OuterWrapper {
+                                    display: flex;
+                                    align-items: center;
+
+                                    .checkbox__wrapper {
+                                        background: rgb(0 0 0 / 0%);
+                                        position: relative;
+                                        border: 1px solid rgb(0 0 0 / 0%);
+                                        cursor: pointer;
+
+                                        .checkbox__input {
+                                            cursor: pointer;
+                                            opacity: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            z-index: 1;
+                                            position: absolute;
+                                        }
+
+                                        .checkbox__empty-div {
+                                            position: relative;
+                                            width: 20px;
+                                            height: 20px;
+                                            background-color: $white;
+                                            border: 2px solid rgba(91,97,110,0.66);
+                                            flex-shrink: 0;
+                                            justify-content: center;
+                                            align-items: center;
+                                            display: flex;
+                                        }
+                                    }
+                                }
+
+                                .span__margin {
+                                    width: 24px;
+                                }
+
+                                .agreement__content {
+                                    text-align: start;
+                                    color: $secondary-gray;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    font-weight: 400;
+
+                                    .user__agreement {
+                                        color: rgb(6 103 208);
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+
+                            .create__acccount {
+                                width: 100%;
+                                padding-bottom: 24px;
+                                padding-top: 16px;
+                                display: flex;
+
+                                .create__buttonWrapper {
+                                    pointer-events: none;
+                                    height: 56px;
+                                    border-radius: 56px;
+                                    background-color: rgb(158, 189, 255);
+                                    border-color: rgb(0 0 0 / 0%);
+                                    width: 100%;
+                                    max-width: 100%;
+                                    white-space: normal;
+                                    padding-right: 32px;
+                                    padding-left: 32px;
+                                    color: $white;
+                                    opacity: 0.38;
+                                    text-align: center;
+
+                                    .span__OuterWrapper {
+                                        position: relative;
+                                        opacity: 1;
+
+                                        .span__InnerWrapper {
+                                            text-align: center;
+                                            color: $white;
+                                            font-size: 16px;
+                                            line-height: 24px;
+                                            font-weight: 500;
+
+                                            .create__account-content {
+                                                font-size: 16px;
+                                                line-height: 24px;
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .business__accountWrapper {
+                                padding-bottom: 40px;
+                                justify-content: center;
+                                display: flex;
+
+                                .business__account {
+                                    text-align: center;
+                                    color: $secondary-gray;
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    font-weight: 600;
+
+                                    .business__accountLink {
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        background: 0 0;
+                                        color: rgb(6 103 208);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .content-span {
+                width: 80px;
+            }
+
+            .do-more__withCrypto {
+                padding-left: 56px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include signup-column {
+                    flex-direction: row;
+                    padding-left: 0;
+                }
+
+                .heading {
+                    width: 444px;
+                    justify-content: center;
+                    display: flex;
+
+                    .heading__content {
+                        text-align: center;
+                        color: $secondary-gray;
+                        font-size: 48px;
+                        line-height: 56px;
+                        font-weight: 400;
+                        margin-bottom: 16px;
+                        @include signup-column {
+                            font-size: 16px;
+                            line-height: 24px;
+                            font-weight: 600;
+                            text-align: start;
+                            width: 88%;
+                        }
+                    }
+
+                    .heading__content-label {
+                        text-align: center;
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 400;
+                        display: none;
+                    }
+
+                    @include signup-column {
+                        display: flex;
+                        flex-direction: column;
+                        width: 88%;
+                    }
+                }
+
+                .content__wrapper {
+                    display: flex;
+                    padding-bottom: 8px;
+                    width: 311px;
+                    margin-bottom: 16px;
+
+                    .content {
+                        text-align: start;
+                        color: $gray60;
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 400;
+                    }
+                    
+                    @include signup-column {
+                        display: none;
+                    }
+                }
+
+                .img__wrapper {
+                    display: block;
+
+                    .content__image {
+                        width: 240px;
+                        height: 240px;
+
+                        @include signup-column {
+                            width: 115.99999999999px;
+                            height: 115.9999999999px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

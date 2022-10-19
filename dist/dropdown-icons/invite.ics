@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20220926
+DTEND;VALUE=DATE:20220927
+RRULE:FREQ=WEEKLY;BYDAY=MO
+DTSTAMP:20220919T123224Z
+ORGANIZER;CN=ekweozorinnocent@gmail.com:mailto:ekweozorinnocent@gmail.com
+UID:1trho8quf1p38qa5ieov5lojbp@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=ekweozorinnocent@gmail.com;X-NUM-GUESTS=0:mailto:ekweozorinnocent@gmail
+ .com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=clintonadeoti02@gmail.com;X-NUM-GUESTS=0:mailto:clintonadeoti02@gma
+ il.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=geezyenyoghasim@gmail.com;X-NUM-GUESTS=0:mailto:geezyenyoghasim@gma
+ il.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=josephtunde100@gmail.com;X-NUM-GUESTS=0:mailto:josephtunde100@gmail
+ .com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=oghenerukevwejeff@gmail.com;X-NUM-GUESTS=0:mailto:oghenerukevwejeff
+ @gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=anthonyudehchinaza@gmail.com;X-NUM-GUESTS=0:mailto:anthonyudehchina
+ za@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/jho-bxwz-nxr
+X-MICROSOFT-CDO-OWNERAPPTID:-691421176
+CREATED:20220919T123221Z
+DESCRIPTION:weekly stand up for brooi front end team\n\n-::~:~::~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nJoin 
+ with Google Meet: https://meet.google.com/jho-bxwz-nxr\n\nView your event a
+ t https://calendar.google.com/calendar/event?action=VIEW&eid=MXRyaG84cXVmMX
+ AzOHFhNWllb3Y1bG9qYnAgam9zZXBodHVuZGUxMDBAbQ&tok=MjYjZWt3ZW96b3Jpbm5vY2VudE
+ BnbWFpbC5jb21lNWExMjkyODhiZWEwMzUxZmIyMmI3NmU0ZDQzZTE2Mjg0MThjZTM4&ctz=Afri
+ ca%2FLagos&hl=en&es=1.\n\nPlease do not edit this section.\n-::~:~::~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20220919T123221Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Brooi FE-team level up
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

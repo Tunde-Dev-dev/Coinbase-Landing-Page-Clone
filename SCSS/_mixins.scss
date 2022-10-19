@@ -1,0 +1,52 @@
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin large-tablet {
+    @media (max-width: $large-tablet) {
+        @content;
+    }
+}
+
+@mixin breakpoint-x {
+    @media (max-width: 945px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-xx {
+    @media (min-width: 946px) {
+        @content;
+    }
+}
+
+@mixin header {
+    @media (max-width: $header) {
+        @content
+    }
+}
+
+@mixin arrow-none {
+    @media (max-width: $signup-arrow-none) {
+        @content
+    }
+}
+
+@mixin signup-column {
+    @media (max-width: $signup-flex-column) {
+        @content
+    }
+}
